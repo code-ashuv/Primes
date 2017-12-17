@@ -1,14 +1,14 @@
 import os.path
 
-primes = []
+primes = [] # initialisation
 
-start = input("Enter Start Number: ")
-end = input("Enter End Number: ")
+start = input("Enter Start Number: ") # Starting number of the range
+end = input("Enter End Number: ") # End number of the range
 
 while end <= start:
 	end = input("Enter End Number: (greater than Start Number)  ")
 	
-if os.path.isfile("primeNumb.txt"):
+if os.path.isfile("primeNumb.txt"):	# File to read/save prime numbers
 	File = open("primeNumb.txt",'r')
 	for eachline in File:
 		primes.append(int(eachline))
@@ -22,8 +22,8 @@ if start == 1:
 	start = 2
 	print "Skipping 1"
 count_primes = 0
-for number in range(start, end+1):
-	isNotPrime = 0
+for number in range(start, end+1):	# Core logic: Prime numbers are those
+	isNotPrime = 0					# which are not divisible by 2,3, and other primes
 	if number > 3:
 		if float(number)%2 == 0:
 			isNotPrime += 1
